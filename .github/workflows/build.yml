@@ -42,7 +42,7 @@ jobs:
       - name: Archive (Sofle Left)
         uses: actions/upload-artifact@v4
         with:
-          name: firmware
+          name: firmware_left
           path: sofle_left_nice_nano_v2.uf2
       - name: West Build (Sofle Right)
         run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=sofle_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
@@ -54,5 +54,5 @@ jobs:
       - name: Archive (Sofle Right)
         uses: actions/upload-artifact@v4
         with:
-          name: firmware
+          name: firmware_right
           path: sofle_right_nice_nano_v2.uf2
