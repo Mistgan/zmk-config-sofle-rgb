@@ -53,11 +53,10 @@ jobs:
       - name: Copy right UF2
         run: cp build/zephyr/zmk.uf2 artifacts/sofle_right_nice_nano_v2.uf2
 
-      - name: Zip both firmwares
-        run: zip -j firmwares.zip artifacts/sofle_left_nice_nano_v2.uf2 artifacts/sofle_right_nice_nano_v2.uf2
-
-      - name: Upload zip artifact
+      - name: Upload both UF2 files
         uses: actions/upload-artifact@v4
         with:
           name: firmwares
-          path: firmwares.zip
+          path: |
+            artifacts/sofle_left_nice_nano_v2.uf2
+            artifacts/sofle_right_nice_nano_v2.uf2
